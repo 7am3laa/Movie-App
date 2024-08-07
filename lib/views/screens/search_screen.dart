@@ -93,7 +93,11 @@ class SearchScreen extends StatelessWidget {
                     ? const Center(child: CircularProgressIndicator())
                     : controller.listMovies.isEmpty
                         ? const Center(
-                            child: CustomText(text: 'No movies found'),
+                            child: CustomText(
+                              text: 'No movies found',
+                              fontWeight: FontWeight.w500,
+                              color: Colors.grey,
+                            ),
                           )
                         : ListView.builder(
                             itemCount: controller.listMovies.length,

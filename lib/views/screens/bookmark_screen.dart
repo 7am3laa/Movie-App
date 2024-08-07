@@ -32,7 +32,11 @@ class BookmarkScreen extends StatelessWidget {
       body: Obx(
         () => controller.bookedMovies.isEmpty
             ? const Center(
-                child: CustomText(text: 'No Movies added yet'),
+                child: CustomText(
+                  text: 'No Movies Saved yet',
+                  fontWeight: FontWeight.w500,
+                  color: Colors.grey,
+                ),
               )
             : ListView.builder(
                 itemCount: controller.bookedMovies.length,
