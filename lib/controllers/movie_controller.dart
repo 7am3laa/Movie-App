@@ -1,5 +1,3 @@
-// ignore_for_file: avoid_print
-
 import 'package:get/get.dart';
 import 'package:movie_app/Services/movie_services.dart';
 import 'package:movie_app/models/movie_model.dart';
@@ -8,8 +6,8 @@ class MovieController extends GetxController {
   MovieServices movieServices = MovieServices();
   RxList<MovieModel> movieListnow = <MovieModel>[].obs;
   RxList<MovieModel> movieListup = <MovieModel>[].obs;
-  RxList<MovieModel> genreMovies = <MovieModel>[].obs;
-  RxList<MovieModel> searchResults = <MovieModel>[].obs;
+  RxList<MovieModel> drawerList = <MovieModel>[].obs;
+
   RxString genreName = ''.obs;
   RxInt currentIndex = 0.obs;
 
@@ -22,16 +20,25 @@ class MovieController extends GetxController {
       final movies = await movieServices.getNowPlayingMovies();
       movieListnow.value = movies;
     } on Exception catch (e) {
-      throw Exception(e);
+      throw Exception('Error fetching movies: $e');
     }
   }
 
   Future<void> getUpcomingMovies() async {
     try {
       final movies = await movieServices.getUpcomingMovies();
-      movieListup.addAll(movies);
+      movieListup.value = movies;
     } on Exception catch (e) {
-      throw Exception(e);
+      throw Exception('Error fetching movies: $e');
+    }
+  }
+
+  Future<void> getMovies(String category) async {
+    try {
+      final movies = await movieServices.getMovies(category);
+      drawerList.value = movies;
+    } on Exception catch (e) {
+      throw Exception('Error fetching movies: $e');
     }
   }
 

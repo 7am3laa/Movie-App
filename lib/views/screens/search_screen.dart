@@ -66,17 +66,19 @@ class SearchScreen extends StatelessWidget {
                           ),
                         );
                       },
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Container(
-                          height: 30,
-                          padding: const EdgeInsets.all(8.0),
-                          alignment: Alignment.center,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(12.0),
-                            color: Colors.blue[100],
-                          ),
+                      child: Card(
+                        margin: const EdgeInsets.all(10.0),
+                        clipBehavior: Clip.antiAlias,
+                        shadowColor: const Color(0xff006783),
+                        elevation: 5.0,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                        color: const Color(0xff006783),
+                        child: Padding(
+                          padding: const EdgeInsets.all(10.0),
                           child: CustomText(
+                            color: Colors.white,
                             text: label,
                             fintSize: 16.0,
                           ),

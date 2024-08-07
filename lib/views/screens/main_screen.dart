@@ -21,47 +21,25 @@ class MainScreen extends StatelessWidget {
             BookmarkScreen(),
           ],
         ),
-        bottomNavigationBar: Card(
-          color: Colors.white,
-          elevation: 10,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              IconButton(
-                onPressed: () {
-                  controller.changeIndex(0);
-                },
-                icon: Icon(
-                  Icons.movie_outlined,
-                  color: controller.currentIndex.value == 0
-                      ? Colors.blue
-                      : Colors.black,
-                ),
-              ),
-              IconButton(
-                onPressed: () {
-                  controller.changeIndex(1);
-                },
-                icon: Icon(
-                  Icons.search_rounded,
-                  color: controller.currentIndex.value == 1
-                      ? Colors.blue
-                      : Colors.black,
-                ),
-              ),
-              IconButton(
-                onPressed: () {
-                  controller.changeIndex(2);
-                },
-                icon: Icon(
-                  Icons.bookmark_border_outlined,
-                  color: controller.currentIndex.value == 2
-                      ? Colors.blue
-                      : Colors.black,
-                ),
-              ),
-            ],
-          ),
+        bottomNavigationBar: BottomNavigationBar(
+          currentIndex: controller.currentIndex.value,
+          onTap: (index) {
+            controller.changeIndex(index);
+          },
+          items: const [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.movie),
+              label: 'Movie',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.search),
+              label: 'Search',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.bookmark),
+              label: 'Bookmark',
+            ),
+          ],
         ),
       );
     });

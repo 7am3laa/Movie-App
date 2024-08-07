@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:movie_app/controllers/movie_controller.dart';
 import 'package:movie_app/models/movie_model.dart';
-import 'package:movie_app/views/screens/all_Items_screen.dart';
+import 'package:movie_app/views/screens/all_items_screen.dart';
 import 'package:movie_app/views/widgets/custom_horizontal_movie_card.dart';
 import 'package:movie_app/views/widgets/custom_row.dart';
 import 'package:movie_app/views/widgets/custom_vertical_movie_card.dart';
@@ -17,26 +17,23 @@ class MovieScreen extends StatelessWidget {
     final MovieController movieController = Get.find();
     movieController.getNowPlayingMovies();
     movieController.getUpcomingMovies();
-
     return Scaffold(
       drawer: const DrawerScreen(),
       appBar: AppBar(
         title: const Text('FilmKu'),
         centerTitle: true,
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.notifications),
-          ),
-        ],
       ),
       body: Column(
         children: [
           CustomRow(
             title: 'Now Showing',
             onTap: () {
-              Get.to(() => AllItemsScreen(
-                  name: 'Now Showing', items: movieController.movieListnow));
+              Get.to(
+                () => AllItemsScreen(
+                  name: 'Now Showing',
+                  items: movieController.movieListnow,
+                ),
+              );
             },
           ),
           Obx(() {
@@ -50,9 +47,7 @@ class MovieScreen extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
                   MovieModel movie = movieController.movieListnow[index];
-                  return CustomVerticalMovieCard(
-                    movie: movie,
-                  );
+                  return CustomVerticalMovieCard(movie: movie);
                 },
               ),
             );
@@ -61,7 +56,9 @@ class MovieScreen extends StatelessWidget {
             title: 'Popular',
             onTap: () {
               Get.to(() => AllItemsScreen(
-                  name: 'Popular', items: movieController.movieListup));
+                    name: 'Popular',
+                    items: movieController.movieListup,
+                  ));
             },
           ),
           Obx(() {
@@ -73,9 +70,7 @@ class MovieScreen extends StatelessWidget {
                 itemCount: 5,
                 itemBuilder: (context, index) {
                   MovieModel movie = movieController.movieListup[index];
-                  return CustomHorizontalMovieCard(
-                    movie: movie,
-                  );
+                  return CustomHorizontalMovieCard(movie: movie);
                 },
               ),
             );
