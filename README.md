@@ -1,16 +1,39 @@
-# movie_app
+# Movie App
 
-A new Flutter project.
+A Flutter application that provides an interface for browsing and managing movie information. This app allows users to view movie details, search for movies, and manage bookmarks.
 
-## Getting Started
+## Usage
 
-This project is a starting point for a Flutter application.
+Home Screen: Displays a list of movies with options to view details, mark as favorite, or search for specific movies.
 
-A few resources to get you started if this is your first Flutter project:
+Search Screen: Allows users to search for movies based on various criteria.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Bookmark Screen: Shows a list of bookmarked movies.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Screen Shots
+
+- Moive Screen
+![Moive Screen](screenshots/movie.png)
+
+- Search Screen
+![Search Screen](screenshots/s1.png)
+![Search Screen](screenshots/s2.png)
+
+- BookMark Screen
+![BookMark screen](screenshots/b1.png)
+![BookMark screen](screenshots/b2.png)
+![BookMark screen](screenshots/b3.png)
+
+- Drawer
+![Drawer](screenshots/d1.png)
+
+- Categories
+![Categories](screenshots/c1.png)
+![Categories](screenshots/c2.png)
+![Categories](screenshots/c3.png)
+![Categories](screenshots/c4.png)
+![Categories](screenshots/c5.png)
+
+- Details Screen
+![Details Screen](screenshots/details1.png)
+![Details Screen](screenshots/details2.png)
