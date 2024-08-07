@@ -18,13 +18,23 @@ class DrawerScreen extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const DrawerHeader(
+          DrawerHeader(
             child: Center(
-              child: CustomText(
-                text: 'Movie App',
-                color: Colors.white,
-                fontWeight: FontWeight.w500,
-                fintSize: 24,
+              child: Column(
+                children: [
+                  Image.asset(
+                    'assets/images/movie.png',
+                    fit: BoxFit.fill,
+                    height: 100,
+                    width: 100,
+                  ),
+                  const CustomText(
+                    text: 'Movie App',
+                    color: Colors.white,
+                    fontWeight: FontWeight.w500,
+                    fintSize: 24,
+                  ),
+                ],
               ),
             ),
           ),
@@ -72,13 +82,15 @@ class DrawerScreen extends StatelessWidget {
               },
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.all(8.0),
-            child: CustomText(
-              text: 'Movie App v 1.0.0',
-              color: Colors.grey,
-              fontWeight: FontWeight.w500,
-              fintSize: 16,
+          const Center(
+            child: Padding(
+              padding: EdgeInsets.all(8.0),
+              child: CustomText(
+                text: 'Movie App v 1.0.0',
+                color: Colors.grey,
+                fontWeight: FontWeight.w500,
+                fintSize: 16,
+              ),
             ),
           ),
         ],

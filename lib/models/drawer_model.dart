@@ -17,22 +17,22 @@ class DrawerList {
     DrawerModel(
       title: 'Top Rated',
       api: 'top_rated',
-      icon: Icons.filter_drama,
+      icon: Icons.trending_up,
     ),
     DrawerModel(
       title: 'Now Playing',
       api: 'now_playing',
-      icon: Icons.search,
+      icon: Icons.play_circle_outlined,
     ),
     DrawerModel(
       title: 'Popular',
       api: 'popular',
-      icon: Icons.person,
+      icon: Icons.movie_filter_rounded,
     ),
     DrawerModel(
       title: 'Upcoming',
       api: 'upcoming',
-      icon: Icons.settings,
+      icon: Icons.upcoming_rounded,
     ),
   ];
 }

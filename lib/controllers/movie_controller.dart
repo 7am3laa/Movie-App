@@ -10,7 +10,6 @@ class MovieController extends GetxController {
 
   RxString genreName = ''.obs;
   RxInt currentIndex = 0.obs;
-
   void changeIndex(int index) {
     currentIndex.value = index;
   }

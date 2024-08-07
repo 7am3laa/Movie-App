@@ -23,16 +23,18 @@ class MainScreen extends StatelessWidget {
         ),
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: controller.currentIndex.value,
-          onTap: (index) {
-            controller.changeIndex(index);
-          },
+          onTap: controller.changeIndex,
+          selectedItemColor: const Color(0xff006783),
+          unselectedItemColor: Colors.grey,
+          showUnselectedLabels: true,
+          elevation: 10,
           items: const [
             BottomNavigationBarItem(
               icon: Icon(Icons.movie),
-              label: 'Movie',
+              label: 'Movies',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.search),
+              icon: Icon(Icons.search_outlined),
               label: 'Search',
             ),
             BottomNavigationBarItem(

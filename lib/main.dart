@@ -6,7 +6,7 @@ import 'views/screens/main_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  IinitialBindings().dependencies();
+  // IinitialBindings().dependencies();
   runApp(const MyApp());
 }
 
