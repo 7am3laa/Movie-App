@@ -1,7 +1,8 @@
 import 'package:get/get.dart';
-import 'package:movie_app/Services/movie_services.dart';
 import 'package:movie_app/models/movie_model.dart';
 import 'package:movie_app/models/movie_search_model.dart';
+
+import '../core/Services/movie_services.dart';
 
 class SearchScreenController extends GetxController {
   RxString searchText = ''.obs;

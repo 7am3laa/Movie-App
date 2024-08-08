@@ -89,23 +89,34 @@ class SearchScreen extends StatelessWidget {
                 ),
               ),
               Expanded(
-                child: controller.isLoading.value
-                    ? const Center(child: CircularProgressIndicator())
-                    : controller.listMovies.isEmpty
-                        ? const Center(
-                            child: CustomText(
-                              text: 'No movies found',
-                              fontWeight: FontWeight.w500,
-                              color: Colors.grey,
-                            ),
-                          )
-                        : ListView.builder(
-                            itemCount: controller.listMovies.length,
-                            itemBuilder: (context, index) {
-                              MovieModel movie = controller.listMovies[index];
-                              return CustomHorizontalMovieCard(movie: movie);
-                            },
-                          ),
+                child: controller.searchText.value == ''
+                    ? const Center(
+                        child: CustomText(
+                          text: 'search for movies',
+                          fontWeight: FontWeight.w500,
+                          color: Colors.grey,
+                        ),
+                      )
+                    : controller.isLoading.value
+                        ? const Center(child: CircularProgressIndicator())
+                        : controller.listMovies.isEmpty
+                            ? const Center(
+                                child: CustomText(
+                                  text: 'No movies found',
+                                  fontWeight: FontWeight.w500,
+                                  color: Colors.grey,
+                                ),
+                              )
+                            : ListView.builder(
+                                itemCount: controller.listMovies.length,
+                                itemBuilder: (context, index) {
+                                  MovieModel movie =
+                                      controller.listMovies[index];
+                                  return CustomHorizontalMovieCard(
+                                    movie: movie,
+                                  );
+                                },
+                              ),
               ),
             ],
           );

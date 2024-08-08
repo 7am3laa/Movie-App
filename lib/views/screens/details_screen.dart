@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:movie_app/controllers/bookmark_controller.dart';
-import 'package:movie_app/controllers/movie_controller.dart';
+import 'package:movie_app/core/functions/trans_genre_id.dart';
 import 'package:movie_app/models/movie_model.dart';
 import '../widgets/custom_text.dart';
 
@@ -11,8 +11,8 @@ class DetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final MovieController movieController = Get.find();
     final BookmarkScreenController bookmarkScreenController = Get.find();
+    final MainFunctions mainFunctions = MainFunctions();
 
     return Scaffold(
       body: SingleChildScrollView(
@@ -141,7 +141,7 @@ class DetailsScreen extends StatelessWidget {
                           ),
                           child: Center(
                             child: CustomText(
-                              text: movieController.getGenreName(g),
+                              text: mainFunctions.getGenreName(g),
                               fintSize: 12,
                               fontWeight: FontWeight.bold,
                               color: Colors.blue,

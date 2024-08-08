@@ -9,30 +9,9 @@ class MovieServices {
   final String _baseUrl = 'https://api.themoviedb.org/3/movie/';
   final String _apikey = 'eff458afec4dd1cdfce61765ec793d07';
 
-  Future<List<MovieModel>> getNowPlayingMovies() async {
+  Future<List<MovieModel>> getMovies(c) async {
     try {
-      final response =
-          await _dio.get('${_baseUrl}now_playing?api_key=$_apikey');
-      if (response.statusCode == 200) {
-        List<dynamic> data = response.data['results'];
-        return data.map((movie) => MovieModel.fromMap(movie)).toList();
-      } else {
-        throw Exception('Failed to load movies');
-      }
-    } on DioError catch (e) {
-      if (e.response != null) {
-        print('Error Response Data: ${e.response!.data}');
-      } else {
-        print('Error Request Options: ${e.requestOptions}');
-        print('Error Message: ${e.message}');
-      }
-      throw Exception('Failed to load movies');
-    }
-  }
-
-  Future<List<MovieModel>> getUpcomingMovies() async {
-    try {
-      final response = await _dio.get('${_baseUrl}upcoming?api_key=$_apikey');
+      final response = await _dio.get('$_baseUrl$c?api_key=$_apikey');
       if (response.statusCode == 200) {
         List<dynamic> data = response.data['results'];
 
@@ -98,27 +77,4 @@ class MovieServices {
       throw Exception('Failed to load movies');
     }
   }
-
-
-  Future<List<MovieModel>> getMovies(c) async {
-    try {
-      final response = await _dio.get('$_baseUrl$c?api_key=$_apikey');
-      if (response.statusCode == 200) {
-        List<dynamic> data = response.data['results'];
-
-        return data.map((movie) => MovieModel.fromMap(movie)).toList();
-      } else {
-        throw Exception('Failed to load movies');
-      }
-    } on DioError catch (e) {
-      if (e.response != null) {
-        print('Error Response Data: ${e.response!.data}');
-      } else {
-        print('Error Request Options: ${e.requestOptions}');
-        print('Error Message: ${e.message}');
-      }
-      throw Exception('Failed to load movies');
-    }
-  }
-
 }

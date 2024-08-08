@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:movie_app/Services/bindings.dart';
-
+import 'package:movie_app/core/Services/bindings.dart';
 import 'views/screens/main_screen.dart';
 
 void main() {

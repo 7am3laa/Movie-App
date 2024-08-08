@@ -15,8 +15,8 @@ class MovieScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final MovieController movieController = Get.find();
-    movieController.getNowPlayingMovies();
-    movieController.getUpcomingMovies();
+    movieController.getNowShowingMovies();
+    movieController.getPopularMovies();
     return Scaffold(
       drawer: const DrawerScreen(),
       appBar: AppBar(
@@ -31,13 +31,13 @@ class MovieScreen extends StatelessWidget {
               Get.to(
                 () => AllItemsScreen(
                   name: 'Now Showing',
-                  items: movieController.movieListnow,
+                  items: movieController.nowShowingList,
                 ),
               );
             },
           ),
           Obx(() {
-            if (movieController.movieListnow.isEmpty) {
+            if (movieController.nowShowingList.isEmpty) {
               return const Center(child: CircularProgressIndicator());
             }
             return SizedBox(
@@ -46,7 +46,7 @@ class MovieScreen extends StatelessWidget {
                 itemCount: 5,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
-                  MovieModel movie = movieController.movieListnow[index];
+                  MovieModel movie = movieController.nowShowingList[index];
                   return CustomVerticalMovieCard(movie: movie);
                 },
               ),
@@ -57,19 +57,19 @@ class MovieScreen extends StatelessWidget {
             onTap: () {
               Get.to(() => AllItemsScreen(
                     name: 'Popular',
-                    items: movieController.movieListup,
+                    items: movieController.popularList,
                   ));
             },
           ),
           Obx(() {
-            if (movieController.movieListup.isEmpty) {
+            if (movieController.popularList.isEmpty) {
               return const Center(child: CircularProgressIndicator());
             }
             return Expanded(
               child: ListView.builder(
                 itemCount: 5,
                 itemBuilder: (context, index) {
-                  MovieModel movie = movieController.movieListup[index];
+                  MovieModel movie = movieController.popularList[index];
                   return CustomHorizontalMovieCard(movie: movie);
                 },
               ),

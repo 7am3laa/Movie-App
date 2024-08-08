@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:movie_app/core/functions/trans_genre_id.dart';
 import 'package:movie_app/models/movie_model.dart';
 import 'package:movie_app/views/screens/details_screen.dart';
-
-import '../../controllers/movie_controller.dart';
 import 'custom_text.dart';
 
 class CustomHorizontalMovieCard extends StatelessWidget {
@@ -14,7 +13,7 @@ class CustomHorizontalMovieCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final MovieController movieController = Get.find();
+    final MainFunctions mainFunctions = MainFunctions();
     return GestureDetector(
       onTap: () {
         Get.to(() => DetailsScreen(movie: movie));
@@ -76,7 +75,7 @@ class CustomHorizontalMovieCard extends StatelessWidget {
                           ),
                           child: Center(
                             child: CustomText(
-                              text: movieController.getGenreName(g),
+                              text: mainFunctions.getGenreName(g),
                               fintSize: 12,
                               fontWeight: FontWeight.bold,
                               color: Colors.blue,

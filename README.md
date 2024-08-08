@@ -16,24 +16,16 @@ Bookmark Screen: Shows a list of bookmarked movies.
 ![Moive Screen](screenshots/movie.png)
 
 - Search Screen
-![Search Screen](screenshots/s1.png)
-![Search Screen](screenshots/s2.png)
+![Search Screen](screenshots/s1.png) ![Search Screen](screenshots/s2.png) ![Search Screen](screenshots/s3.png)
 
 - BookMark Screen
-![BookMark screen](screenshots/b1.png)
-![BookMark screen](screenshots/b2.png)
-![BookMark screen](screenshots/b3.png)
+![BookMark screen](screenshots/b1.png) ![BookMark screen](screenshots/b2.png) ![BookMark screen](screenshots/b3.png)
 
 - Drawer
 ![Drawer](screenshots/d1.png)
 
 - Categories
-![Categories](screenshots/c1.png)
-![Categories](screenshots/c2.png)
-![Categories](screenshots/c3.png)
-![Categories](screenshots/c4.png)
-![Categories](screenshots/c5.png)
+![Categories](screenshots/c1.png) ![Categories](screenshots/c2.png) ![Categories](screenshots/c3.png) ![Categories](screenshots/c4.png) ![Categories](screenshots/c5.png)
 
 - Details Screen
-![Details Screen](screenshots/details1.png)
-![Details Screen](screenshots/details2.png)
+![Details Screen](screenshots/details1.png) ![Details Screen](screenshots/details2.png)

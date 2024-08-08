@@ -1,11 +1,11 @@
 import 'package:get/get.dart';
-import 'package:movie_app/Services/movie_services.dart';
 import 'package:movie_app/models/movie_model.dart';
+import '../core/Services/movie_services.dart';
 
 class MovieController extends GetxController {
   MovieServices movieServices = MovieServices();
-  RxList<MovieModel> movieListnow = <MovieModel>[].obs;
-  RxList<MovieModel> movieListup = <MovieModel>[].obs;
+  RxList<MovieModel> nowShowingList = <MovieModel>[].obs;
+  RxList<MovieModel> popularList = <MovieModel>[].obs;
   RxList<MovieModel> drawerList = <MovieModel>[].obs;
 
   RxString genreName = ''.obs;
@@ -14,19 +14,19 @@ class MovieController extends GetxController {
     currentIndex.value = index;
   }
 
-  Future<void> getNowPlayingMovies() async {
+  Future<void> getNowShowingMovies() async {
     try {
-      final movies = await movieServices.getNowPlayingMovies();
-      movieListnow.value = movies;
+      final movies = await movieServices.getMovies('now_playing');
+      nowShowingList.value = movies;
     } on Exception catch (e) {
       throw Exception('Error fetching movies: $e');
     }
   }
 
-  Future<void> getUpcomingMovies() async {
+  Future<void> getPopularMovies() async {
     try {
-      final movies = await movieServices.getUpcomingMovies();
-      movieListup.value = movies;
+      final movies = await movieServices.getMovies('upcoming');
+      popularList.value = movies;
     } on Exception catch (e) {
       throw Exception('Error fetching movies: $e');
     }
@@ -39,31 +39,5 @@ class MovieController extends GetxController {
     } on Exception catch (e) {
       throw Exception('Error fetching movies: $e');
     }
-  }
-
-  String getGenreName(int genreId) {
-    final Map<int, String> genreNames = {
-      28: "Action",
-      12: "Adventure",
-      16: "Animation",
-      35: "Comedy",
-      80: "Crime",
-      99: "Documentary",
-      18: "Drama",
-      10751: "Family",
-      14: "Fantasy",
-      36: "History",
-      27: "Horror",
-      10402: "Music",
-      9648: "Mystery",
-      10749: "Romance",
-      878: "Science Fiction",
-      10770: "TV Movie",
-      53: "Thriller",
-      10752: "War",
-      37: "Western",
-    };
-
-    return genreNames[genreId] ?? 'Unknown Genre';
   }
 }
