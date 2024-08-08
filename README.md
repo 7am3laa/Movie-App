@@ -15,11 +15,6 @@ Bookmark Screen: Shows a list of bookmarked movies.
 - Moive Screen
 ![Moive Screen](screenshots/movie.png)
 
-- Search Screen
-![Search Screen](screenshots/s1.png)
-![Search Screen](screenshots/s2.png)
-![Search Screen](screenshots/s3.png)
-
 - BookMark Screen
 ![BookMark screen](screenshots/b1.png)
 ![BookMark screen](screenshots/b2.png)
